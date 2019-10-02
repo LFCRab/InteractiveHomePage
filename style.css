@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: popreg;
+  src: url("Poppins-Regular.ttf");
+}
+nav {
+  height: 10vh;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  align-items: center;
+}
+.burger {
+  padding: 30px;
+  cursor: pointer;
+}
+.mountainRange {
+  position: relative;
+  font-family: popreg;
+  font-weight: 600;
+  font-size: 25px;
+  color: blue;
+  opacity: 0.9;
+  padding-top: 200px;
+  padding-left: 100px;
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  background: url("Mountain.jpg");
+  background-size: cover;
+}
+.lastWord {
+  position: relative;
+  margin-left: 10px;
+}
+.lastWord::after {
+  content: "";
+  position: absolute;
+  transform: translateY(15px);
+  height: 10%;
+  width: 1px;
+  border-right: 2px solid white;
+  animation: blink 0.5s infinite ease;
+}
+/*The Enter buttons animation*/
+.Enter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -35%);
+  font-family: popreg;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 30px;
+  transition: 0.5s;
+}
+.Enter span {
+  position: absolute;
+  transition: transform 0.5s;
+}
+.Enter span:nth-child(1),
+.Enter span:nth-child(3) {
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+.Enter span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+.Enter:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.Enter span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  transform-origin: left;
+}
+.Enter:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+.Enter span:nth-child(2),
+.Enter span:nth-child(4) {
+  width: 2px;
+  height: 100%;
+  background: white;
+}
+.Enter span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+.Enter:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.Enter span:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+.Enter:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+div .fadeOut {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
